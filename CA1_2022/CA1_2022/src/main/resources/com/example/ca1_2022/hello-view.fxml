@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="492.0" prefWidth="750.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ca1_2022.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Button fx:id="imagePicker" mnemonicParsing="false" onAction="#imagePicked" text="Select Photo" />
+   <AnchorPane prefHeight="382.0" prefWidth="710.0">
+      <children>
+         <ImageView fx:id="img" layoutX="14.0" layoutY="26.0" onMouseClicked="#selectPixelOnce" pickOnBounds="true" preserveRatio="true" />
+         <Label fx:id="label1" layoutX="514.0" layoutY="113.0" prefHeight="17.0" prefWidth="65.0" text="${slideHue.value}" />
+          <Label layoutX="509.0" layoutY="85.0" text="Select Hue Value" />
+         <Slider fx:id="slideHue" layoutX="484.0" layoutY="139.0" />
+         <CheckBox fx:id="rect" layoutX="513.0" layoutY="17.0" mnemonicParsing="false" text="Show Rectangles" />
+         <CheckBox fx:id="labels" layoutX="510.0" layoutY="48.0" mnemonicParsing="false" text="Show Labels" />
+         <Button layoutX="463.0" layoutY="277.0" mnemonicParsing="false" onAction="#rect" text="Update" />
+         <Slider fx:id="slideB" layoutX="484.0" layoutY="231.0" />
+         <Label layoutX="491.0" layoutY="172.0" text="Select  Brightness Value" />
+         <Label layoutX="532.0" layoutY="196.0" prefHeight="17.0" prefWidth="43.0" text="${slideB.value}" />
+         <Label fx:id="warning" layoutX="498.0" layoutY="350.0" prefHeight="17.0" prefWidth="112.0" />
+         <Button layoutX="576.0" layoutY="277.0" mnemonicParsing="false" onAction="#removeRectangel" text="Clear" />
+         <TableView layoutX="438.0" layoutY="324.0" prefHeight="51.0" prefWidth="222.0">
+           <columns>
+             <TableColumn prefWidth="75.0" text="Name:" />
+             <TableColumn prefWidth="141.3333740234375" text="Number of Combonets" />
+           </columns>
+         </TableView>
+      </children>
+   </AnchorPane>
+</VBox>
